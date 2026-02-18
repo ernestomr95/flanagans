@@ -122,11 +122,17 @@ body {
 /* Menu Grid */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 1rem;
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Ordenador */
+@media (min-width: 769px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .menu-card {
