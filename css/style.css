@@ -44,8 +44,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🍺</text></svg>') center/200px repeat;
-    opacity: 0.05;
+    background: url('../img/logo.png') center/300px repeat;
+    opacity: 0.15;
 }
 
 .hero-overlay {
@@ -119,20 +119,12 @@ body {
 
 /* Menu Grid */
 .menu-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 1rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.menu-row {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu-card {
@@ -171,17 +163,16 @@ body {
 }
 
 .menu-card-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent-red));
     border-radius: 50%;
     font-size: 2.5rem;
     color: var(--text-light);
-    border: 3px solid var(--primary-gold);
-    box-shadow: 0 0 20px rgba(212, 168, 75, 0.3);
 }
 
 .menu-card h3 {
@@ -427,19 +418,19 @@ body {
         font-size: 1.8rem;
     }
     
-    .menu-row {
-        flex-direction: column;
-        align-items: center;
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
     }
     
     .menu-card {
-        width: 100%;
-        max-width: 300px;
+        padding: 1.5rem;
     }
     
     .menu-card-img {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
     }
     
     .menu-card h3 {
