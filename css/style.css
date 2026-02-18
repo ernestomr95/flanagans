@@ -124,7 +124,7 @@ body {
     display: grid;
     gap: 2rem;
     padding: 1rem;
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -132,6 +132,7 @@ body {
 @media (min-width: 769px) {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
     }
 }
 
