@@ -1,60 +1,457 @@
-body {
-    background-color: black;
-    font-family: 'Roboto Condensed', sans-serif;
+/* Variables */
+:root {
+    --primary-gold: #d4a84b;
+    --primary-dark: #1a1a1a;
+    --secondary-dark: #0d0d0d;
+    --text-light: #f5f5f5;
+    --text-muted: #a0a0a0;
+    --accent-red: #8b0000;
+    --card-bg: #252525;
+    --transition: all 0.3s ease;
 }
 
-.inicio {
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #1a1a1a 100%);
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🍺</text></svg>') center/200px repeat;
+    opacity: 0.05;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.brand-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease;
+}
+
+.brand-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.location {
+    color: var(--text-muted);
+    font-size: 1rem;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.location i {
+    color: var(--primary-gold);
+    margin-right: 0.5rem;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-gold);
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.inicio div {
-    flex: 1 1 300px;
-    max-width: 350px;
+.menu-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
-.inicio a {
-    display: block;
-}
-
-.inicio img {
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.inicio a:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(212, 168, 75, 0.5);
-}
-
-footer {
-    color: white;
+.menu-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
-    padding: 20px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
-footer a {
+.menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-gold), var(--accent-red));
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: var(--primary-gold);
+}
+
+.menu-card:hover::before {
+    transform: scaleX(1);
+}
+
+.menu-card-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    border: 3px solid var(--primary-gold);
+    box-shadow: 0 0 20px rgba(212, 168, 75, 0.3);
+}
+
+.menu-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.menu-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark), #2d1810);
+    padding: 3rem 0;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-gold);
+}
+
+.page-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-gold);
+    letter-spacing: 3px;
+}
+
+/* Beer Table */
+.beer-table-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.beer-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.beer-table th,
+.beer-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.beer-table th {
+    background: var(--primary-dark);
+    color: var(--primary-gold);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.beer-table tr:hover {
+    background: rgba(212, 168, 75, 0.1);
+}
+
+.beer-table .beer-name {
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.beer-table .beer-origin {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.beer-table .beer-price {
+    color: var(--primary-gold);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.beer-table .beer-abv {
+    background: var(--accent-red);
     color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 2rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-gold);
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--primary-gold);
+    color: var(--secondary-dark);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--primary-dark);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+    border-top: 3px solid var(--primary-gold);
+}
+
+.footer-logo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-gold);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.social-link:hover {
+    background: var(--primary-gold);
+    color: var(--secondary-dark);
+    transform: translateY(-5px);
+}
+
+.contact-info {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info a {
+    color: var(--primary-gold);
     text-decoration: none;
 }
 
-footer hr {
-    border-color: #333;
-    margin: 20px 0;
+.contact-info i {
+    color: var(--primary-gold);
+    margin-right: 0.5rem;
 }
 
+.copyright {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+/* Info Page */
+.info-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.info-section h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.info-section p {
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .inicio div {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .brand-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
     }
     
-    .inicio img {
-        max-width: 80%;
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .menu-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .menu-card-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .menu-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .beer-table th,
+    .beer-table td {
+        padding: 0.75rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
     }
 }

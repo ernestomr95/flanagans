@@ -1,74 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="O'Flanagan's - Cervecería Craft">
-    <meta name="author" content="O'Flanagan's">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O'Flanagan's - Cervecería Craft en Santiago de Compostela">
     <title>O'Flanagan's - Cervecería Craft</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body style='background-color:black;' class="text-center">
-    <a href='index.html' title="Nuestra carta">
-    <img style='width:40%;max-width:350px;' src='img/logo.png' alt="Nuestra carta">
-</a>
-    <h2 style='color:white;'>:: O'FLANAGAN'S ::</h2>	
-    
-    <main>
-        <div class='inicio'>
-            <div>
-                <a href='carta.html' title="Carta">
-                    <img style='max-width:100%;' src='img/portada_CARTA.jpg' alt="Carta">
+<body>
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="brand-title">O'FLANAGAN'S</h1>
+            <p class="brand-subtitle">Irish Pub & Craft Beer</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Rúa do Vilar, 70 - Santiago de Compostela</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <h2 class="section-title text-center mb-5">NUESTRA CARTA</h2>
+        
+        <div class="menu-grid">
+            <div class="menu-row">
+                <a href="carta.html" class="menu-card">
+                    <div class="menu-card-img" style="background: url('img/logo.png') center/cover no-repeat;">
+                    </div>
+                    <h3>CARTA</h3>
+                    <p>Nuestra selección de cervezas</p>
+                </a>
+                
+                <a href="cervezas.html" class="menu-card">
+                    <div class="menu-card-img" style="background: url('img/logo.png') center/cover no-repeat;">
+                    </div>
+                    <h3>CERVEZAS</h3>
+                    <p>Cervezas artesanales y de importación</p>
                 </a>
             </div>
-            <div>
-                <a href='cervezas.html' title="Cervezas">
-                    <img style='max-width:100%;' src='img/portada_BARRIL.jpg' alt="Cervezas">
+            
+            <div class="menu-row">
+                <a href="eventos.html" class="menu-card">
+                    <div class="menu-card-img" style="background: url('img/logo.png') center/cover no-repeat;">
+                    </div>
+                    <h3>EVENTOS</h3>
+                    <p>Próximos eventos y actividades</p>
                 </a>
-            </div>
-            <div>
-                <a href='eventos.html' title="Eventos">
-                    <img style='max-width:100%;' src='img/portada_BL.jpg' alt="Eventos">
-                </a>
-            </div>
-            <div>
-                <a href='info.html' title="Info">
-                    <img style='max-width:100%;' src='img/FERMENTADOS.jpg' alt="Info">
+                
+                <a href="info.html" class="menu-card">
+                    <div class="menu-card-img" style="background: url('img/logo.png') center/cover no-repeat;">
+                    </div>
+                    <h3>INFO</h3>
+                    <p>Información y contacto</p>
                 </a>
             </div>
         </div>
     </main>
-    
-    <footer>
-    <hr>
-    <img style='max-width:30%; margin: 10pt 0pt 5pt;' src='img/LOGO_FOOTER.png' alt="O'Flanagan's">
-    <div style="margin: 5pt 0pt 5pt;">
-        <a style='margin:5px;' href='https://www.instagram.com/oflanaganscraft/' title="Instagram">
-            <img style='max-width:45px;' src='img/INSTAGRAM.png' alt="Instagram">
-        </a>
-        <a style='margin:5px;' href='https://www.facebook.com/oflanagans' title="Facebook">
-            <img style='max-width:45px;' src='img/FACEBOOK.png' alt="Facebook">
-        </a>
-        <a style='margin:5px;' href='https://untappd.com/v/oflanagans' title="Untappd">
-            <img style='max-width:45px;' src='img/UNTAPPD.png' alt="Untappd">
-        </a>
-        <a style='margin:5px;' href='tel:+34627810626' title="Teléfono">
-            <img style='max-width:45px;' src='img/WHATSAPP.png' alt="Teléfono">
-        </a>
-    </div>
-    <div style="margin: 10pt 0pt 0pt; line-height: 1.0;">
-        <p>Rúa do Vilar, 70 Bajo - Santiago de Compostela</p>
-        <p><a style="color:white;" href="tel:+34627810626" title="Teléfono">627 810 626</a></p>
-    </div>
-    <br><br><br><br>
-</footer>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <h3>O'FLANAGAN'S</h3>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/oflanaganscraft/" target="_blank" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/oflanagans" target="_blank" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://untappd.com/v/oflanagans" target="_blank" class="social-link" title="Untappd">
+                    <i class="fab fa-untappd"></i>
+                </a>
+                <a href="tel:+34627810626" class="social-link" title="Teléfono">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Rúa do Vilar, 70, Bajo - 15705 Santiago de Compostela</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+34627810626">627 810 626</a></p>
+            </div>
+            
+            <p class="copyright">&copy; 2024 O'Flanagan's. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
