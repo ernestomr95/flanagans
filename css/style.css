@@ -46,7 +46,8 @@ body {
     bottom: 0;
     background: url('../img/logo.png') no-repeat;
     background-position: center center;
-    background-size: 350px;
+    background-size: 500px;
+    opacity: 0.3;
 }
 
 .hero-overlay {
