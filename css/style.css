@@ -46,8 +46,8 @@ body {
     bottom: 0;
     background: url('../img/logo.png') no-repeat;
     background-position: center center;
-    background-size: cover;
-    opacity: 0.3;
+    background-size: contain;
+    opacity: 0.4;
 }
 
 .hero-overlay {
@@ -122,10 +122,10 @@ body {
 /* Menu Grid */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 1rem;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
